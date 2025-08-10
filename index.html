@@ -7,17 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: #f1f5f9;
             overflow-x: hidden;
-            transition: background 0.4s ease, color 0.4s ease;
-        }
-        .light-mode {
-            background: linear-gradient(135deg, #f7fafc, #e2e8f0);
-            color: #1a202c;
         }
         .fade-in {
             opacity: 0;
@@ -93,6 +89,7 @@
             background: linear-gradient(90deg, #00d970, #9333ea);
             border: 2px solid #fff;
             border-radius: 4px;
+            animation: moveClip 10s linear infinite;
             transition: transform 0.3s ease;
         }
         .timeline-clip:hover {
@@ -127,7 +124,7 @@
             font-size: 5rem;
             font-weight: 900;
             margin-bottom: 1rem;
-            color: #ffffff; /* Fixed to white */
+            color: #ffffff;
             animation: zoomIn 2s ease-out;
         }
         .hero-content p {
@@ -164,6 +161,41 @@
             color: white;
             font-size: 1.5rem;
         }
+        .skill-item {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, rgba(0, 217, 112, 0.1), rgba(147, 51, 234, 0.1));
+        }
+        .icon-with-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .section-icon {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #00d970, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d970, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -175,6 +207,7 @@
             <div class="flex items-center space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-green-400 text-lg font-medium transition duration-300">Home</a>
                 <a href="#about" class="text-gray-300 hover:text-green-400 text-lg font-medium transition duration-300">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-green-400 text-lg font-medium transition duration-300">Skills</a>
                 <a href="#education" class="text-gray-300 hover:text-green-400 text-lg font-medium transition duration-300">Education</a>
                 <a href="#experience" class="text-gray-300 hover:text-green-400 text-lg font-medium transition duration-300">Experience</a>
                 <a href="#portfolio" class="text-gray-300 hover:text-green-400 text-lg font-medium transition duration-300">Portfolio</a>
@@ -212,10 +245,46 @@
         </div>
     </section>
 
-    <section id="education" class="py-24 bg-gray-800">
+    <section id="skills" class="py-24 bg-gray-800">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 class="text-4xl font-bold text-green-400 text-center mb-12 fade-in">Education</h2>
-            <div class="bg-gray-900 rounded-xl shadow-lg p-8 max-w-2xl mx-auto hover-3d fade-in">
+            <h2 class="text-4xl font-bold text-green-400 text-center mb-12 fade-in">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
+                <div class="skill-item fade-in">
+                    <i class="fas fa-video skill-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Video Editing</h3>
+                    <p class="text-gray-400">Expert in using CapCut and Canva to create engaging short-form video content, including TikTok ads, Reels, and YouTube Shorts.</p>
+                </div>
+                <div class="skill-item fade-in">
+                    <i class="fas fa-headset skill-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Virtual Assistance</h3>
+                    <p class="text-gray-400">Providing comprehensive administrative and operational support to ensure seamless business operations.</p>
+                </div>
+                <div class="skill-item fade-in">
+                    <i class="fas fa-pen-fancy skill-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Script Writing</h3>
+                    <p class="text-gray-400">Crafting compelling narratives and scripts that effectively communicate your message and engage your audience.</p>
+                </div>
+                <div class="skill-item fade-in">
+                    <i class="fas fa-paint-brush skill-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Graphic Design</h3>
+                    <p class="text-gray-400">Creating custom graphics and visual elements to enhance branding and marketing materials.</p>
+                </div>
+                <div class="skill-item fade-in">
+                    <i class="fas fa-stamp skill-icon"></i>
+                    <h3 class="text-xl font-semibold mb-2">Logo Making</h3>
+                    <p class="text-gray-400">Designing unique and professional logos that represent your brand identity and vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="icon-with-text text-center mb-12 fade-in">
+                <i class="fas fa-graduation-cap section-icon"></i>
+                <h2 class="text-4xl font-bold text-green-400">Education</h2>
+            </div>
+            <div class="bg-gray-800 rounded-xl shadow-lg p-8 max-w-2xl mx-auto hover-3d fade-in">
                 <h3 class="text-2xl font-semibold text-gray-100">Bukidnon State University</h3>
                 <p class="text-gray-400 text-lg">Bachelor of Science in Automotive Technology</p>
                 <p class="text-gray-400 text-lg">2012 – 2016</p>
@@ -223,46 +292,49 @@
         </div>
     </section>
 
-    <section id="experience" class="py-24 bg-gray-900">
+    <section id="experience" class="py-24 bg-gray-800">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 class="text-4xl font-bold text-green-400 text-center mb-12 fade-in">Work Experience</h2>
+            <div class="icon-with-text text-center mb-12 fade-in">
+                <i class="fas fa-briefcase section-icon"></i>
+                <h2 class="text-4xl font-bold text-green-400">Work Experience</h2>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Social Media Manager</h3>
                     <p class="text-gray-400">Jan 2025 – Present</p>
                     <p class="text-gray-400 mt-2">Crafting video-driven social media strategies to boost brand engagement.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Video Editor/Operations Manager - ZeroAdSpent</h3>
                     <p class="text-gray-400">2024 – Jun 2025</p>
                     <p class="text-gray-400 mt-2">Led teams and produced professional video edits for client success.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">ESL Teacher - 51Talk</h3>
                     <p class="text-gray-400">2023 – 2024</p>
                     <p class="text-gray-400 mt-2">Enhanced lessons with multimedia techniques.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Freelancer - Remotask</h3>
                     <p class="text-gray-400">2021 – 2023</p>
                     <p class="text-gray-400 mt-2">Delivered top-tier video editing and virtual assistance.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Credit Investigator - Bank of Makati Financing</h3>
                     <p class="text-gray-400">Sep 2019 – Mar 2020</p>
                     <p class="text-gray-400 mt-2">Conducted detailed credit assessments.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Customer Service - Teleperformance CDO</h3>
                     <p class="text-gray-400">Oct 2023</p>
                     <p class="text-gray-400 mt-2">Provided exceptional customer support.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Job Controller - Toyota Cagayan De Oro Inc.</h3>
                     <p class="text-gray-400">Dec 2016 – Oct 2018</p>
                     <p class="text-gray-400 mt-2">Managed vehicle repair workflows.</p>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-6 hover-3d fade-in">
+                <div class="bg-gray-900 rounded-xl p-6 hover-3d fade-in">
                     <h3 class="text-xl font-semibold text-gray-200">Warranty Administrator - Toyota Cagayan De Oro Inc.</h3>
                     <p class="text-gray-400">Jul 2016 – Dec 2016</p>
                     <p class="text-gray-400 mt-2">Processed warranty claims efficiently.</p>
@@ -271,7 +343,7 @@
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 bg-gray-800">
+    <section id="portfolio" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <h2 class="text-4xl font-bold text-green-400 text-center mb-12 fade-in">Portfolio</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
@@ -307,7 +379,7 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-gray-900">
+    <section id="contact" class="py-24 bg-gray-800">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <h2 class="text-4xl font-bold text-green-400 mb-8 fade-in">Get in Touch</h2>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10 fade-in">
@@ -315,14 +387,14 @@
             </p>
             <div class="max-w-lg mx-auto">
                 <form action="https://formspree.io/f/mpwlkylj" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" class="w-full p-4 mb-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-800 text-gray-200">
-                    <input type="email" name="email" placeholder="Your Email" class="w-full p-4 mb-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-800 text-gray-200">
-                    <textarea name="message" placeholder="Your Message" class="w-full p-4 mb-6 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 bg-gray-800 text-gray-200" rows="5"></textarea>
+                    <input type="text" name="name" placeholder="Your Name" class="w-full p-4 mb-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-900 text-gray-200">
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-4 mb-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-900 text-gray-200">
+                    <textarea name="message" placeholder="Your Message" class="w-full p-4 mb-6 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-900 text-gray-200" rows="5"></textarea>
                     <button type="submit" class="custom-btn text-white">Send Message</button>
                 </form>
             </div>
-            <p class="text-gray-400 mt-6 fade-in">Email: <a href="mailto:psyjeign.real@gmail.com" class="text-purple-400 hover:underline">psyjeign.real@gmail.com</a></p>
-            <p class="text-gray-400 fade-in">Phone: <a href="tel:+63965922910" class="text-purple-400 hover:underline">0965922910</a></p>
+            <p class="text-gray-400 mt-6 fade-in">Email: <a href="mailto:psyjeign.real@gmail.com" class="text-green-400 hover:underline">psyjeign.real@gmail.com</a></p>
+            <p class="text-gray-400 fade-in">Phone: <a href="tel:+63965922910" class="text-green-400 hover:underline">0965922910</a></p>
         </div>
     </section>
 
